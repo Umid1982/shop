@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
 //            StockSeeder::class,
-            IncomeSeeder::class,
+//            IncomeSeeder::class,
+//            SaleSeeder::class,
         ]);
 //         \App\Models\User::factory()->create();
 
