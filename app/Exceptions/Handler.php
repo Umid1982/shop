@@ -3,8 +3,10 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\JsonResponse;
+use Symfony\Component\Console\Application;
 use Throwable;
-
+use Illuminate\Http\Response;
 class Handler extends ExceptionHandler
 {
     /**
@@ -26,5 +28,18 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+    public function render($request, Throwable $e):Application|Response|JsonResponse|\Illuminate\Contracts\Foundation\Application|\Symfony\Component\HttpFoundation\Response|\Illuminate\Http\RedirectResponse|\Illuminate\Contracts\Routing\ResponseFactory
+    {
+        $response = parent::render($request, $e);
+
+        if ($response->getStatusCode() >= 400) {
+            return response([
+                'message' => $e->getMessage(),
+                'success' => false
+            ]);
+        }
+
+        return $response;
     }
 }
