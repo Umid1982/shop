@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Stock;
+namespace App\Http\Requests\Income;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -23,8 +23,8 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'dateFrom' => ['required', 'date_format:Y-m-d H:i:s', Rule::exists('stocks', 'dateFrom')],
-            'dateTo' => ['required', 'date_format:Y-m-d H:i:s', Rule::exists('stocks', 'dateTo')],
+            'dateFrom' => ['required', 'date_format:Y-m-d H:i:s', Rule::exists('incomes', 'dateFrom')],
+            'dateTo' => ['required', 'date_format:Y-m-d H:i:s', Rule::exists('incomes', 'dateTo')],
             'key' => ['required', 'string'],
             'limit' => ['nullable', 'integer']
         ];
