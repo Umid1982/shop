@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\StockController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,4 +21,5 @@ use Illuminate\Support\Facades\Route;
 //});
 Route::middleware('auth:sanctum')->group(function () {
         Route::get('stocks',StockController::class);
+    Route::get('incomes', IncomeController::class);
 });
