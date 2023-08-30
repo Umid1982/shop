@@ -18,15 +18,15 @@ Change .env file
 
 DB_CONNECTION=mysql
 
-DB_HOST=127.0.0.1
+DB_HOST=167.172.100.243
 
 DB_PORT=3306
 
-DB_DATABASE=shop
+DB_DATABASE=test
 
-DB_USERNAME=root
+DB_USERNAME=kfc
 
-DB_PASSWORD=root
+DB_PASSWORD=RHYFr&rh9+4X4m{P
 
 Other settings (Commands in the project folder)
 
