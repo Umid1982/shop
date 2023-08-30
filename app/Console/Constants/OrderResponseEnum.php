@@ -2,8 +2,8 @@
 
 namespace App\Console\Constants;
 
-enum SaleResponseEnum: string
+enum OrderResponseEnum: string
 {
-    case SALE_LIST = 'Sale list';
+    case ORDER_LIST = 'Order list';
     case ERROR = "Something went wrong, check Logs!";
 }
